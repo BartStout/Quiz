@@ -5,7 +5,7 @@ $(document).ready(function () {
 		var quizname = $('#quizname');
 		var name = "";
 		$.ajax({
-			url: '/bart/public/quizadmin',
+			url: '/jQueryQuiz/public/quizadmin',
 			headers: {'X-CSRF-TOKEN': token},
 			type: 'POST',
 			dataType: 'json',
@@ -23,7 +23,7 @@ $(document).ready(function () {
 	function getQuiz () {
 		var token = $("[name = '_token']").val();
 		$.ajax({
-			url: '/bart/public/quizadmin/create',
+			url: '/jQueryQuiz/public/quizadmin/create',
 			headers: {'X-CSRF-TOKEN': token},
 			type: 'GET',
 			dataType: 'json',
@@ -57,7 +57,7 @@ $(document).ready(function () {
 
 	function delQuiz (id) {
 		$.ajax({
-		url: '/bart/public/quizadmin/delete/quiz/'+id,
+		url: '/jQueryQuiz/public/quizadmin/delete/quiz/'+id,
 		headers: {'X-CSRF-TOKEN': token},
 		type: 'POST',
 		dataType: 'json',
@@ -77,7 +77,7 @@ $(document).ready(function () {
 	function getFullQuiz (idquiz) {
 		var token = $("[name = '_token']").val();
 		$.ajax({
-			url: '/bart/public/quizadmin/'+ idquiz +'/edit',
+			url: '/jQueryQuiz/public/quizadmin/'+ idquiz +'/edit',
 			headers: {'X-CSRF-TOKEN': token},
 			type: 'GET',
 			dataType: 'json',
@@ -195,7 +195,7 @@ $(document).ready(function () {
 					
 					
 					$.ajax({
-					url: '/bart/public/quizadmin/question/'+$('.question').attr('id'),
+					url: '/jQueryQuiz/public/quizadmin/question/'+$('.question').attr('id'),
 					headers: {'X-CSRF-TOKEN': token},
 					type: 'POST',
 					dataType: 'json',
@@ -229,7 +229,7 @@ $(document).ready(function () {
 			
 			
 			$.ajax({
-				url: '/bart/public/quizadmin/question/update/'+id,
+				url: '/jQueryQuiz/public/quizadmin/question/update/'+id,
 				headers: {'X-CSRF-TOKEN': token},
 				type: 'POST',
 				dataType: 'json',
@@ -296,7 +296,7 @@ $(document).ready(function () {
 							}
 						};
 						$.ajax({
-						url: '/bart/public/quizadmin/question/editedit/'+$('.question').attr('id'),
+						url: '/jQueryQuiz/public/quizadmin/question/editedit/'+$('.question').attr('id'),
 						headers: {'X-CSRF-TOKEN': token},
 						type: 'POST',
 						dataType: 'json',
@@ -318,7 +318,7 @@ $(document).ready(function () {
 	}
 	function deletethequestion (id) {
 		$.ajax({
-		url: '/bart/public/quizadmin/question/fulldelete/'+id,
+		url: '/jQueryQuiz/public/quizadmin/question/fulldelete/'+id,
 		headers: {'X-CSRF-TOKEN': token},
 		type: 'POST',
 		dataType: 'json',
